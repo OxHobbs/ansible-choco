@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Node.js Foundation</dc:creator><dc:description>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+
+## Notes
+
+#### This package is the **LTS** (Long Term Support) release of Node.js. See the [LTS schedule](https://github.com/nodejs/LTS#lts-schedule) for more information.
+
+#### If you want the **Current** release, install the [nodejs](https://chocolatey.org/packages/nodejs) package instead.</dc:description><dc:identifier>nodejs-lts</dc:identifier><version>12.18.3</version><keywords>nodejs-lts nodejs lts node.js node admin npm javascript</keywords><dc:title>Node.js LTS (Install)</dc:title><lastModifiedBy>choco, Version=0.10.15.0, Culture=neutral, PublicKeyToken=79d02ea9cad655eb;Microsoft Windows NT 6.3.9600.0;.NET Framework 4</lastModifiedBy></coreProperties>
