@@ -19,3 +19,15 @@ steps:
     packVersion: '12.8.3'
     packOutputDirectory: '$(Build.ArtifactStagingDirectory)'
   
+- task: ChocolateyCommand@0
+  displayName: Publish chocolatey package
+  inputs:
+    command: 'push'
+    verbose: true
+    pushOperation: 'single'
+    pushWorkingDirectory: '$(Build.ArtifactStagingDirectory)'
+    pushNupkgFileName: 'nodejs-lts.12.8.3.nupkg'
+    chocolateySourceType: 'manual'
+    pushSource: 'https://austinhobbs.pkgs.visualstudio.com/_packaging/austin-repo/nuget/v2'
+    pushApikey: 'pibgcnnxuxtlp4ncbql3hutucub56g2uiemkpblz5rgev4u46uaa'
+    pushForce: true
