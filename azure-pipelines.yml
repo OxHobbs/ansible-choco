@@ -17,5 +17,5 @@ steps:
     packWorkingDirectory: '$(Build.Repository.LocalPath)/nodejs-lts'
     packNuspecFileName: 'nodejs-lts.nuspec'
     packVersion: '12.8.3'
-    packOutputDirectory: '$(Build.ArtifactStagingDirectory)/nupkg'
+    packOutputDirectory: '$(Build.ArtifactStagingDirectory)'
   
