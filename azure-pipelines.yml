@@ -10,6 +10,7 @@ steps:
     force: true
     
 - task: ChocolateyCommand@0
+  displayName: Run choco pack on nodejs nuspec file
   inputs:
     command: 'pack'
     packOperation: 'single'
