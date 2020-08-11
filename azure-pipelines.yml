@@ -20,7 +20,7 @@ steps:
     packOperation: 'single'
     packWorkingDirectory: '$(Build.Repository.LocalPath)/nodejs-lts'
     packNuspecFileName: 'nodejs-lts.nuspec'
-    packVersion: '12.8.5'
+    packVersion: '12.8.6'
     packOutputDirectory: '$(Build.ArtifactStagingDirectory)'
 
 - task: NuGetCommand@2
