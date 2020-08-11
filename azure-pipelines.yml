@@ -11,7 +11,7 @@ steps:
 
 - task: NuGetAuthenticate@0
   inputs:
-    nuGetServiceConnections: 'nuget-sc'
+    nuGetServiceConnections: 'nuget-sc-basic'
     
 - task: ChocolateyCommand@0
   displayName: Run choco pack on nodejs nuspec file
