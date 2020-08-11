@@ -8,6 +8,10 @@ steps:
 - task: ChocolateyToolInstaller@0
   inputs:
     force: true
+
+- task: NuGetAuthenticate@0
+  inputs:
+    nuGetServiceConnections: 'nuget-sc'
     
 - task: ChocolateyCommand@0
   displayName: Run choco pack on nodejs nuspec file
@@ -19,16 +23,16 @@ steps:
     packVersion: '12.8.3'
     packOutputDirectory: '$(Build.ArtifactStagingDirectory)'
 
-- task: ChocolateyCommand@0
-  displayName: register the internal repo
-  inputs:
-    command: 'source'
-    sourceOperation: 'add'
-    sourceSourceName: 'austin-repo'
-    sourceSource: 'https://austinhobbs.pkgs.visualstudio.com/_packaging/austin-repo/nuget/v2'
-    sourcePriority: '0'
-    user: 'auhobbs@microsoft.com'
-    password: 'pibgcnnxuxtlp4ncbql3hutucub56g2uiemkpblz5rgev4u46uaa'
+# - task: ChocolateyCommand@0
+#   displayName: register the internal repo
+#   inputs:
+#     command: 'source'
+#     sourceOperation: 'add'
+#     sourceSourceName: 'austin-repo'
+#     sourceSource: 'https://austinhobbs.pkgs.visualstudio.com/_packaging/austin-repo/nuget/v2'
+#     sourcePriority: '0'
+#     user: 'auhobbs@microsoft.com'
+#     password: 'pibgcnnxuxtlp4ncbql3hutucub56g2uiemkpblz5rgev4u46uaa'
   
 # - task: ChocolateyCommand@0
 #   displayName: Publish chocolatey package
@@ -42,3 +46,12 @@ steps:
 #     pushSource: 'https://austinhobbs.pkgs.visualstudio.com/_packaging/austin-repo/nuget/v2'
 #     pushApikey: 'pibgcnnxuxtlp4ncbql3hutucub56g2uiemkpblz5rgev4u46uaa'
 #     pushForce: true
+
+
+- task: NuGetCommand@2
+  displayName: Publish choco package
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '4568fcc1-9bbe-454c-98e1-2b8885950ac4'
